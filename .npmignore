@@ -1,0 +1,7 @@
+.github/
+dist/
+icons/
+build-font.py
+.idea/
+*.iml
+opencode.json

@@ -1,0 +1,38 @@
+/* ai-labels-font — AI Content Label Icons */
+/* Icons designed by the European Union in the public domain */
+
+@font-face {
+  font-family: 'ai-labels-font';
+  src: url('ai-labels-font.eot');
+  src: url('ai-labels-font.eot?#iefix') format('embedded-opentype'),
+       url('ai-labels-font.woff2') format('woff2'),
+       url('ai-labels-font.ttf') format('truetype');
+  font-weight: normal; font-style: normal; font-display: swap;
+}
+
+.ai-icon {
+  font-family: 'ai-labels-font';
+  font-style: normal; font-weight: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+}
+
+/* Direct insertion with ::before */
+.ai-icon--ai::before { content: "\e001"; }
+.ai-icon--ai-modified::before { content: "\e002"; }
+.ai-icon--ai-generated::before { content: "\e003"; }
+
+/* Sizes */
+.ai-icon--sm { font-size: 16px; }
+.ai-icon--md { font-size: 24px; }
+.ai-icon--lg { font-size: 32px; }
+.ai-icon--xl { font-size: 48px; }
+
+/* Colors */
+.ai-icon--black { color: #000000; }
+.ai-icon--white { color: #ffffff; }
+.ai-icon--blue { color: #0066CC; }
+.ai-icon--red { color: #CC0000; }
+.ai-icon--green { color: #008844; }

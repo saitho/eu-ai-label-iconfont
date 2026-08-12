@@ -1,0 +1,28 @@
+{
+  "name": "ai-labels-font",
+  "version": "0.0.1",
+  "description": "TTF font of 3 EU AI Act label icons (AI, AI Modified, AI Generated)",
+  "keywords": [
+    "font",
+    "AI",
+    "EU AI Act",
+    "transparency",
+    "responsible AI",
+    "icons",
+    "emoji fonts"
+  ],
+  "license": "EUPL-1.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/au-ai-iconfont/ai-labels-font"
+  },
+  "main": "dist/ai-labels-font.css",
+  "files": [
+    "dist/ai-labels-font.ttf",
+    "dist/ai-labels-font.woff2",
+    "dist/ai-labels-font.html",
+    "dist/ai-labels-font.css",
+    "package.json"
+  ],
+  "homepage": "https://github.com/au-ai-iconfont/ai-labels-font"
+}

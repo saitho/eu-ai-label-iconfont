@@ -1,0 +1,103 @@
+name: Build & Publish
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  packages: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install fonttools cu2qu
+
+      - name: Build font
+        run: python3 build-font.py
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: font-files
+          path: |
+            dist/ai-labels-font.ttf
+            dist/ai-labels-font.css
+            dist/ai-labels-font.html
+            dist/ai-labels-font.woff2
+          retention-days: 7
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Get version from tag
+        id: version
+        run: echo "VERSION=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Update package.json version
+        run: |
+          python3 -c "
+          import json
+          pkg = json.load(open('package.json'))
+          pkg['version'] = '${{ steps.version.outputs.VERSION }}'
+          json.dump(pkg, open('package.json', 'w'), indent=2)
+          "
+
+      - name: Publish to NPM
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: "${{ secrets.NPM_TOKEN }}"
+
+  deploy:
+    needs: publish
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install fonttools cu2qu
+
+      - name: Build font
+        run: python3 build-font.py
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
