@@ -1,0 +1,26 @@
+dist/index.html
+  s_2b55adb47ce40c::t_259d32ddef527b 187
+dist/eu-ai-label-iconfont.css
+  h_cdcdfb206c2168 30-35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "fd7fe8b8134340fb4340d09a417daf6627db1e39",
+  "prompts": {},
+  "humans": {
+    "h_cdcdfb206c2168": {
+      "author": "Mario Lubenka <me@saitho.me>"
+    }
+  },
+  "sessions": {
+    "s_2b55adb47ce40c": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_006edbcdfffemawiKo1UQx5a3Z",
+        "model": "kimi-k2.7-code"
+      },
+      "human_author": "Mario Lubenka <me@saitho.me>"
+    }
+  }
+}
