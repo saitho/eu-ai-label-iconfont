@@ -1,0 +1,14 @@
+dist/eu-ai-label-iconfont.css
+  h_cdcdfb206c2168 30-35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "717308a5872b36093fb66ec1c96d20e2beac14ff",
+  "prompts": {},
+  "humans": {
+    "h_cdcdfb206c2168": {
+      "author": "Mario Lubenka <me@saitho.me>"
+    }
+  }
+}
