@@ -1,0 +1,22 @@
+.github/workflows/publish.yml
+  h_cdcdfb206c2168 38-40
+AGENTS.md
+  h_cdcdfb206c2168 5,17-19,48,85
+README.md
+  h_cdcdfb206c2168 1,17,21,26,35,67-68,72,93,121,123-125,151
+build-font.py
+  h_cdcdfb206c2168 3,35,190
+package.json
+  h_cdcdfb206c2168 2,17,19,21-22,24,27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "4ddff2e307f639ce122ab8f5ce8351b62f2f6aaa",
+  "prompts": {},
+  "humans": {
+    "h_cdcdfb206c2168": {
+      "author": "Mario Lubenka <me@saitho.me>"
+    }
+  }
+}
