@@ -9,6 +9,10 @@
 
 AI Content Label Icons for desktop and web.
 
+This repository provides a way of using the icons recommended by the EU for marking AI content by packaging them as an icon font.
+It uses the icons published in the [EU AI content labelling icons collection](https://digital-strategy.ec.europa.eu/en/policies/eu-icons-labelling-ai-generated-content).
+This project is an independent packaging effort and is **not related to, affiliated with, or endorsed by the European Union**.
+
 ## Installation
 
 ### Desktop (macOS, Windows, Linux)
