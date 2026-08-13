@@ -1,0 +1,23 @@
+build-font.py
+  s_f4ee050153fa20::t_9af27ebfc6d46b 143-151,154-155
+  s_f4ee050153fa20::t_79117ac4a371ef 243,245-246,249,256
+  s_f4ee050153fa20::t_970d99167a9343 314
+dist/ai-labels-font.css
+  s_f4ee050153fa20::t_852951f618fe48 20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "52a6c57411967d8799beb30aafea3aab0d59a9da",
+  "prompts": {},
+  "sessions": {
+    "s_f4ee050153fa20": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0074430fdffeaL4Ac6M7aO0yWr",
+        "model": "kimi-k2.7-code"
+      },
+      "human_author": "Mario Lubenka <me@saitho.me>"
+    }
+  }
+}
