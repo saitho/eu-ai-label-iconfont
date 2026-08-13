@@ -1,0 +1,23 @@
+build-font.py
+  s_434347c2187bdb::t_c5cf735a7fc6cc 45-51
+  s_434347c2187bdb::t_634822f93faf2d 235
+  s_434347c2187bdb::t_3cdfdd8f1cf366 14,22
+  s_434347c2187bdb::t_9730dad8b29975 168-184,193-198,224-226,242,300-304
+  s_434347c2187bdb::t_beb0ef480de7e8 305
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "7c037bae4c0662f86f5ea53542fca8d916302357",
+  "prompts": {},
+  "sessions": {
+    "s_434347c2187bdb": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0072850e1ffejlvoPii3jzkynL",
+        "model": "kimi-k2.7-code"
+      },
+      "human_author": "Mario Lubenka <me@saitho.me>"
+    }
+  }
+}
