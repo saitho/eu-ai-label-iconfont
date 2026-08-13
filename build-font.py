@@ -329,59 +329,11 @@ def make_woff2(ttf_path):
         print(f"  WOFF2 skipped: {e}")
         return None
 
-
-# ─── CSS ────────────────────────────────────────────────────────
-
-def make_css():
-    print("\nGenerating CSS...")
-    css = """/* ai-labels-font — AI Content Label Icons */
-/* Icons designed by the European Union in the public domain */
-
-@font-face {
-  font-family: 'ai-labels-font';
-  src: url('ai-labels-font.eot');
-  src: url('ai-labels-font.eot?#iefix') format('embedded-opentype'),
-       url('ai-labels-font.woff2') format('woff2'),
-       url('ai-labels-font.ttf') format('truetype');
-  font-weight: normal; font-style: normal; font-display: swap;
-}
-
-.ai-icon {
-  font-family: 'ai-labels-font';
-  font-style: normal; font-weight: normal;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  display: inline-block;
-  vertical-align: middle;
-  color: #000000;
-}
-
-/* Direct insertion with ::before */
-.ai-icon--ai::before { content: "\\e001"; }
-.ai-icon--ai-modified::before { content: "\\e002"; }
-.ai-icon--ai-generated::before { content: "\\e003"; }
-
-/* Sizes */
-.ai-icon--sm { font-size: 16px; }
-.ai-icon--md { font-size: 24px; }
-.ai-icon--lg { font-size: 32px; }
-.ai-icon--xl { font-size: 48px; }
-.ai-icon--2xl { font-size: 64px; }
-.ai-icon--3xl { font-size: 96px; }
-"""
-    path = os.path.join(OUTPUT_DIR, f"{FONT_FAMILY}.css")
-    with open(path, "w") as fh:
-        fh.write(css)
-    print(f" CSS: {path}")
-
-
 # ─── Main ───────────────────────────────────────────────────────
 
 def main():
     ttf = build_font()
     make_woff2(ttf)
-    make_css()
 
     print("\n" + "=" * 60)
     print("Build complete! Files in dist/:")
