@@ -1,0 +1,26 @@
+package.json
+  h_cdcdfb206c2168 2,17,19,21-22,24,27
+README.md
+  h_cdcdfb206c2168 1,17,21,26,35,67-68,72,93,121,123-125,151
+AGENTS.md
+  h_cdcdfb206c2168 5,17-19,48,85
+build-font.py
+  h_cdcdfb206c2168 3,35,190
+.github/workflows/publish.yml
+  h_cdcdfb206c2168 38-40
+dist/eu-ai-label-iconfont.css
+  h_cdcdfb206c2168 1,5-9,14
+dist/index.html
+  h_cdcdfb206c2168 6-7,45,92-93,96,103-104,106,129,134,142,146,207
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "fbe8527a2aaa29ff75782841510c456ea60194c6",
+  "prompts": {},
+  "humans": {
+    "h_cdcdfb206c2168": {
+      "author": "Mario Lubenka <me@saitho.me>"
+    }
+  }
+}
