@@ -1,0 +1,21 @@
+README.md
+  s_fb63a025df50e0::t_98c389cfa43b3a 32-48,51
+dist/index.html
+  s_fb63a025df50e0::t_58afead0d50da5 91-98
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "bfe4220f26d09a3560724131d2f9a0c6678d17cf",
+  "prompts": {},
+  "sessions": {
+    "s_fb63a025df50e0": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_006f3977affeXrecsGAmm5DX2w",
+        "model": "kimi-k2.7-code"
+      },
+      "human_author": "Mario Lubenka <me@saitho.me>"
+    }
+  }
+}
