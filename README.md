@@ -134,7 +134,7 @@ ai-labels-font/
 
 ```bash
 cd fonts/
-pip3 install fonttools cu2qu
+pip3 install -r requirements.txt
 python3 build-font.py
 ```
 

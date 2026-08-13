@@ -17,6 +17,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: inline-block;
+  color: #000000;
 }
 
 /* Direct insertion with ::before */
@@ -29,10 +30,5 @@
 .ai-icon--md { font-size: 24px; }
 .ai-icon--lg { font-size: 32px; }
 .ai-icon--xl { font-size: 48px; }
-
-/* Colors */
-.ai-icon--black { color: #000000; }
-.ai-icon--white { color: #ffffff; }
-.ai-icon--blue { color: #0066CC; }
-.ai-icon--red { color: #CC0000; }
-.ai-icon--green { color: #008844; }
+.ai-icon--2xl { font-size: 64px; }
+.ai-icon--3xl { font-size: 96px; }

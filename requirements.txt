@@ -1,2 +1,4 @@
 fonttools
-cu2qu
+svg.path
+skia-pathops
+brotli
