@@ -369,13 +369,6 @@ def make_css():
 .ai-icon--xl { font-size: 48px; }
 .ai-icon--2xl { font-size: 64px; }
 .ai-icon--3xl { font-size: 96px; }
-
-/* Colors */
-.ai-icon--black { color: #000000; }
-.ai-icon--white { color: #ffffff; }
-.ai-icon--blue { color: #0066CC; }
-.ai-icon--red { color: #CC0000; }
-.ai-icon--green { color: #008844; }
 """
     path = os.path.join(OUTPUT_DIR, f"{FONT_FAMILY}.css")
     with open(path, "w") as fh:
