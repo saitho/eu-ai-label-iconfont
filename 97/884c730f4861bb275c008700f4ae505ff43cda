@@ -1,0 +1,14 @@
+.github/workflows/publish.yml
+  h_cdcdfb206c2168 12,52,54,70
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "97884c730f4861bb275c008700f4ae505ff43cda",
+  "prompts": {},
+  "humans": {
+    "h_cdcdfb206c2168": {
+      "author": "Mario Lubenka <me@saitho.me>"
+    }
+  }
+}
