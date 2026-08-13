@@ -1,0 +1,19 @@
+dist/index.html
+  s_2b55adb47ce40c::t_259d32ddef527b 42-92,105,109,113,157-162,172-247,251-253,255-257,261-263,265-267,272-274,277-280,284-286,292-295,300-305,311-316,324,332,340
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "ba8939c752b08623ac794e7bf36e165bf209c310",
+  "prompts": {},
+  "sessions": {
+    "s_2b55adb47ce40c": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_006edbcdfffemawiKo1UQx5a3Z",
+        "model": "kimi-k2.7-code"
+      },
+      "human_author": "Mario Lubenka <me@saitho.me>"
+    }
+  }
+}
