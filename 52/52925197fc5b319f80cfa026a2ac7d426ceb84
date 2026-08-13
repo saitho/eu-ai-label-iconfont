@@ -1,0 +1,36 @@
+dist/index.html
+  s_434347c2187bdb::t_660d9233fa902f 5,11-12,18-19,22-31,33,35-41,46-49,52,54-56,58-60,62-112,116-120,124-132,141,143,145-148,152-156,158,163,175-199,202-218,220
+  s_434347c2187bdb::t_f7efcc1248ce66 134-135
+  s_434347c2187bdb::t_a1e8f81557fc33 114-115,121-123
+  s_434347c2187bdb::t_d21067e6494ef4 113
+  s_434347c2187bdb::t_42db979370d94d 136-138
+build-font.py
+  s_434347c2187bdb::t_c5cf735a7fc6cc 45-51
+  s_434347c2187bdb::t_634822f93faf2d 235
+  s_434347c2187bdb::t_3cdfdd8f1cf366 14,22
+  s_434347c2187bdb::t_9730dad8b29975 168-184,193-198,224-226,242,300-304
+  s_434347c2187bdb::t_beb0ef480de7e8 305
+.gitignore
+  h_cdcdfb206c2168 1-2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "5252925197fc5b319f80cfa026a2ac7d426ceb84",
+  "prompts": {},
+  "humans": {
+    "h_cdcdfb206c2168": {
+      "author": "Mario Lubenka <me@saitho.me>"
+    }
+  },
+  "sessions": {
+    "s_434347c2187bdb": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0072850e1ffejlvoPii3jzkynL",
+        "model": "kimi-k2.7-code"
+      },
+      "human_author": "Mario Lubenka <me@saitho.me>"
+    }
+  }
+}
