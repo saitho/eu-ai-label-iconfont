@@ -11,6 +11,7 @@ Outputs: TTF, WOFF2, CSS
 
 Usage:  python3 build-font.py
 """
+import itertools
 import os
 import sys
 from xml.etree import ElementTree as ET
@@ -18,6 +19,7 @@ from xml.etree import ElementTree as ET
 import pathops
 from svg.path import parse_path, Move, Line, CubicBezier, QuadraticBezier, Close
 
+from fontTools.feaLib.builder import addOpenTypeFeaturesFromString
 from fontTools.pens.ttGlyphPen import TTGlyphPen
 from fontTools.pens.recordingPen import RecordingPen
 from fontTools.pens.cu2quPen import Cu2QuPen
@@ -39,6 +41,13 @@ GLYPH_DEFS = [
     ("aim", 0xE002, "LABEL_AI MODIFIED", "ai.modified"),
     ("aig", 0xE003, "LABEL_AI GENERATED", "ai.generated"),
 ]
+
+# ASCII glyphs required for OpenType ligature substitutions.
+ASCII_GLYPHS = {
+    "a": 0x61, "i": 0x69, "m": 0x6D, "g": 0x67,
+    "A": 0x41, "I": 0x49, "M": 0x4D, "G": 0x47,
+}
+ASCII_ADVANCE = 500
 
 
 # ─── SVG → Skia path ────────────────────────────────────────
@@ -156,6 +165,23 @@ def draw_glyph_from_svg(svg_path, target=1000):
     return tt_pen.glyph()
 
 
+# ─── OpenType ligature feature file ────────────────────────────
+
+def build_liga_fea():
+    """Generate a Feature File snippet for all case ligature variants."""
+    lines = ["feature liga {"]
+    for seq, gname in [
+        ("ai", "ai.general"),
+        ("aim", "ai.modified"),
+        ("aig", "ai.generated"),
+    ]:
+        # Emit every case combination (e.g. ai, aI, Ai, AI, ...)
+        for combo in itertools.product(*[(c.lower(), c.upper()) for c in seq]):
+            lines.append(f"    sub {' '.join(combo)} by {gname};")
+    lines.append("} liga;")
+    return "\n".join(lines)
+
+
 # ─── Font builder helper ─────────────────────────────────────
 
 def build_font():
@@ -164,7 +190,12 @@ def build_font():
     print("Building ai-labels-font")
     print("=" * 60)
 
-    glyph_order = [".notdef"] + [g[3] for g in GLYPH_DEFS] + ["space"]
+    glyph_order = (
+        [".notdef"]
+        + [g[3] for g in GLYPH_DEFS]
+        + list(ASCII_GLYPHS)
+        + ["space"]
+    )
 
     # 1. Build glyph objects from SVGs
     print("\n1. Extracting glyphs from SVG...")
@@ -190,6 +221,9 @@ def build_font():
     space_plain = TTGlyphPen(None)
     glyph_objects["space"] = space_plain.glyph()
 
+    for gname in ASCII_GLYPHS:
+        glyph_objects[gname] = TTGlyphPen(None).glyph()
+
     # 2. Build the font using FontBuilder
     print("\n2. Building font with FontBuilder...")
     fb = FontBuilder(1000, isTTF=True)
@@ -198,12 +232,14 @@ def build_font():
         0xE001: "ai.general",
         0xE002: "ai.modified",
         0xE003: "ai.generated",
+        **{cp: gname for gname, cp in ASCII_GLYPHS.items()},
     })
 
     fb.setupGlyf(glyphs=glyph_objects)
     fb.setupMetrics("hmtx", {
         ".notdef": (600, 0),
         "space": (600, 0),
+        **{g: (ASCII_ADVANCE, 0) for g in ASCII_GLYPHS},
         **{g: (1000, 0) for _, _, _, g in GLYPH_DEFS},
     })
 
@@ -260,6 +296,12 @@ def build_font():
         xMaxExtent=int(x_max),
         caretSlopeRise=1, caretSlopeRun=0,
     )
+
+    # Add OpenType ligature table (GSUB)
+    print("\n3. Adding ligature table...")
+    fea = build_liga_fea()
+    addOpenTypeFeaturesFromString(fb.font, fea)
+    print("  OK ligatures added")
 
     # Save TTF
     ttf_path = os.path.join(OUTPUT_DIR, f"{FONT_FAMILY}.ttf")
