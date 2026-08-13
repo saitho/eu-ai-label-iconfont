@@ -27,9 +27,9 @@
 .ai-icon--ai-generated::before { content: "\e003"; }
 
 /* Sizes */
-.ai-icon--sm { font-size: 16px; }
-.ai-icon--md { font-size: 24px; }
-.ai-icon--lg { font-size: 32px; }
-.ai-icon--xl { font-size: 48px; }
-.ai-icon--2xl { font-size: 64px; }
-.ai-icon--3xl { font-size: 96px; }
+.ai-icon--sm { font-size: 1rem; }
+.ai-icon--md { font-size: 1.5rem; }
+.ai-icon--lg { font-size: 2rem; }
+.ai-icon--xl { font-size: 2.5rem; }
+.ai-icon--2xl { font-size: 3rem; }
+.ai-icon--3xl { font-size: 3.5rem; }
