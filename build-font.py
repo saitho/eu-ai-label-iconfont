@@ -94,11 +94,6 @@ def draw_glyph_from_svg(svg_path, target=1000):
 
     viewBox = root.get("viewBox", "0 0 566.93 566.93").split()
     vb_w, vb_h = float(viewBox[2]), float(viewBox[3])
-    # Scale by height so all icons share the same vertical size (≈1 em).
-    scale = target / vb_h
-
-    def to_font(x, y):
-        return (x * scale, (vb_h - y) * scale)
 
     black_paths = []
     white_paths = []
@@ -131,6 +126,15 @@ def draw_glyph_from_svg(svg_path, target=1000):
 
     result = pathops.simplify(result, fix_winding=True)
 
+    # Tight bounding box of the visible artwork
+    xb1, yb1, xb2, yb2 = result.bounds
+    content_h = yb2 - yb1
+    scale = target / content_h if content_h else 1.0
+
+    def to_font(x, y):
+        # Crop to content box, flip Y, and scale so the content fills the em height.
+        return ((x - xb1) * scale, (vb_h - y) * scale)
+
     # Draw result into a RecordingPen, scaling and flipping Y
     rec = RecordingPen()
     result.draw(rec)
@@ -149,13 +153,9 @@ def draw_glyph_from_svg(svg_path, target=1000):
         elif method == "endPath":
             scaled.endPath()
 
-    # Center the glyph vertically in the em square.
-    from fontTools.pens.boundsPen import BoundsPen
+    # Align the content to the bottom of the em square (removes top/bottom whitespace).
     from fontTools.pens.transformPen import TransformPen
-    bounds_pen = BoundsPen(None)
-    scaled.replay(bounds_pen)
-    x1, y1, x2, y2 = bounds_pen.bounds
-    y_offset = (target / 2) - (y1 + y2) / 2
+    y_offset = -((vb_h - yb2) * scale)
 
     # Convert cubics to quadratics, translate, and build the TTGlyph
     tt_pen = TTGlyphPen(None)
