@@ -1,0 +1,44 @@
+dist/ai-labels-font.css
+  s_f4ee050153fa20::t_4275b1f8fac549 33-34
+  s_f4ee050153fa20::t_867116449fc8ae 20
+dist/index.html
+  s_f4ee050153fa20::t_4b0dd898947259 60-61
+  s_f4ee050153fa20::t_e92fb64bc1ccf9 6,12,35,37,39,56-59
+  s_f4ee050153fa20::t_f1f73e1397f0ce 50
+  s_f4ee050153fa20::t_5a202514b168c0 47-49
+requirements.txt
+  s_f4ee050153fa20::t_f23f7a7e9f0db1 2-4
+AGENTS.md
+  s_f4ee050153fa20::t_a92819f3702b43 52,75,85,92
+  s_f4ee050153fa20::t_bafd8149933bd9 6,15-16,18,20,22-24,39,44,48
+build-font.py
+  s_f4ee050153fa20::t_eef3744889cb77 22
+  s_09180d154374ff::t_58cea9e4a3edf5 240,246-247,252-254
+  s_f4ee050153fa20::t_689e7c618151ba 10,18-20,23-24,26,44-68,72-76,86-87,91-95,100-129,131-133,135,137-146,180-181,204-224,227,233,241-245,248-251,257-258,267,271-279,305,318-319,342
+  s_f4ee050153fa20::t_0e071c9f8b14b1 200-203
+  s_f4ee050153fa20::t_24d3f715228867 88-89
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "13a5d4b54c2e5d425bf2589bee2db73652786100",
+  "prompts": {},
+  "sessions": {
+    "s_09180d154374ff": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_007458206ffeMHyxGIpFkLNSpl",
+        "model": "kimi-k2.7-code"
+      },
+      "human_author": "Mario Lubenka <me@saitho.me>"
+    },
+    "s_f4ee050153fa20": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0074430fdffeaL4Ac6M7aO0yWr",
+        "model": "kimi-k2.7-code"
+      },
+      "human_author": "Mario Lubenka <me@saitho.me>"
+    }
+  }
+}
