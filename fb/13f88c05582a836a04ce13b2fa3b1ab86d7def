@@ -1,0 +1,20 @@
+README.md
+  s_fd8409dd3dab71::t_4f05b076cb4f87 12-14
+  s_fd8409dd3dab71::t_60c19b3e46395c 15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "fb13f88c05582a836a04ce13b2fa3b1ab86d7def",
+  "prompts": {},
+  "sessions": {
+    "s_fd8409dd3dab71": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_006e7a334ffebOUa2ZlSXJPCRr",
+        "model": "kimi-k2.7-code"
+      },
+      "human_author": "Mario Lubenka <me@saitho.me>"
+    }
+  }
+}
