@@ -39,6 +39,57 @@
   .feature { background:#fafafa; border-radius:6px; padding:14px; }
   .feature strong { display:block; margin-bottom:4px; color:#222; }
   .feature span { font-size:13px; color:#666; }
+
+  /* Accessibility demo helpers */
+  .a11y-example {
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+  }
+  .a11y-label {
+    font-size: 1rem;
+    color: #222;
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .a11y-banner {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 12px 16px;
+    border-radius: 6px;
+    width: 100%;
+  }
+  .a11y-details {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fafafa;
+    width: 100%;
+  }
+  .a11y-details summary {
+    cursor: pointer;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+  }
+  .a11y-details summary:focus-visible {
+    outline: 2px solid #0066cc;
+    outline-offset: -2px;
+  }
+  .a11y-details-body {
+    padding: 0 16px 16px 48px;
+    color: #444;
+  }
 </style>
 </head>
 <body>
@@ -51,15 +102,15 @@
 <div class="sec"><h2>All Icons</h2>
   <div class="row" style="justify-content:center; gap:60px; margin-top:10px">
     <div style="text-align:center">
-      <i class="ai-icon ai-icon--ai ai-icon--3xl"></i><br>
+      <i class="ai-icon ai-icon--ai ai-icon--3xl" role="img" aria-label="AI content"></i><br>
       <span class="lbl">AI</span><br><code>ai</code>
     </div>
     <div style="text-align:center">
-      <i class="ai-icon ai-icon--ai-modified ai-icon--3xl"></i><br>
+      <i class="ai-icon ai-icon--ai-modified ai-icon--3xl" role="img" aria-label="AI modified content"></i><br>
       <span class="lbl">AI Modified</span><br><code>aim</code>
     </div>
     <div style="text-align:center">
-      <i class="ai-icon ai-icon--ai-generated ai-icon--3xl"></i><br>
+      <i class="ai-icon ai-icon--ai-generated ai-icon--3xl" role="img" aria-label="AI generated content"></i><br>
       <span class="lbl">AI Generated</span><br><code>aig</code>
     </div>
   </div>
@@ -103,9 +154,12 @@ cp dist/eu-ai-label-iconfont.* your-project/assets/</pre>
 <pre><span class="comment">&lt;!-- sizes: sm, md, lg, xl, 2xl, 3xl --&gt;</span>
 &lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="attr">href</span>=<span class="str">"eu-ai-label-iconfont.css"</span>&gt;
 
-&lt;<span class="tag">i</span> <span class="attr">class</span>=<span class="str">"ai-icon ai-icon--ai ai-icon--xl"</span>&gt;&lt;/<span class="tag">i</span>&gt;
-&lt;<span class="tag">i</span> <span class="attr">class</span>=<span class="str">"ai-icon ai-icon--ai-modified ai-icon--xl"</span>&gt;&lt;/<span class="tag">i</span>&gt;
-&lt;<span class="tag">i</span> <span class="attr">class</span>=<span class="str">"ai-icon ai-icon--ai-generated ai-icon--xl"</span>&gt;&lt;/<span class="tag">i</span>&gt;</pre>
+&lt;<span class="tag">i</span> <span class="attr">class</span>=<span class="str">"ai-icon ai-icon--ai ai-icon--xl"</span>
+   <span class="attr">role</span>=<span class="str">"img"</span> <span class="attr">aria-label</span>=<span class="str">"AI content"</span>&gt;&lt;/<span class="tag">i</span>&gt;
+&lt;<span class="tag">i</span> <span class="attr">class</span>=<span class="str">"ai-icon ai-icon--ai-modified ai-icon--xl"</span>
+   <span class="attr">role</span>=<span class="str">"img"</span> <span class="attr">aria-label</span>=<span class="str">"AI modified content"</span>&gt;&lt;/<span class="tag">i</span>&gt;
+&lt;<span class="tag">i</span> <span class="attr">class</span>=<span class="str">"ai-icon ai-icon--ai-generated ai-icon--xl"</span>
+   <span class="attr">role</span>=<span class="str">"img"</span> <span class="attr">aria-label</span>=<span class="str">"AI generated content"</span>&gt;&lt;/<span class="tag">i</span>&gt;</pre>
 
   <h3>Desktop</h3>
   <p class="install-step"><strong>macOS:</strong> double-click <code>eu-ai-label-iconfont.ttf</code> → “Install Font”.</p>
@@ -115,66 +169,151 @@ cp dist/eu-ai-label-iconfont.* your-project/assets/</pre>
 fc-cache -fv</pre>
 </div>
 
+<div class="sec"><h2>Accessibility</h2>
+  <p class="note">
+    EU AI Act labels should be perceivable and understandable for everyone.
+    The examples below show how to meet common accessibility guidelines.
+  </p>
+
+  <h3>1. Visible size and plain language</h3>
+  <div class="row a11y-example a11y-banner">
+    <i class="ai-icon ai-icon--ai-generated ai-icon--lg" role="img" aria-label="AI generated content"></i>
+    <span class="a11y-label">AI-generated content</span>
+  </div>
+<pre>&lt;<span class="tag">i</span> <span class="attr">class</span>=<span class="str">"ai-icon ai-icon--ai-generated ai-icon--lg"</span>
+   <span class="attr">role</span>=<span class="str">"img"</span> <span class="attr">aria-label</span>=<span class="str">"AI generated content"</span>&gt;&lt;/<span class="tag">i</span>&gt;
+&lt;<span class="tag">span</span>&gt;AI-generated content&lt;/<span class="tag">span</span>&gt;</pre>
+  <p class="note">
+    Use at least <code>ai-icon--md</code> (24 px) so the icon stays readable.
+    Accompany it with a plain-language label. Avoid abbreviations other than “AI” —
+    do not use “aig”, “aim”, or other jargon as the visible label.
+  </p>
+
+  <h3>2. Assistive technologies</h3>
+  <div class="row a11y-example">
+    <i class="ai-icon ai-icon--ai-modified ai-icon--lg" aria-hidden="true"></i>
+    <span class="a11y-label">AI modified content</span>
+  </div>
+<pre>&lt;<span class="tag">i</span> <span class="attr">class</span>=<span class="str">"ai-icon ai-icon--ai-modified ai-icon--lg"</span>
+   <span class="attr">aria-hidden</span>=<span class="str">"true"</span>&gt;&lt;/<span class="tag">i</span>&gt;
+&lt;<span class="tag">span</span>&gt;AI modified content&lt;/<span class="tag">span</span>&gt;</pre>
+  <p class="note">
+    If the visible text already describes the label, hide the icon from assistive
+    technology with <code>aria-hidden="true"</code>. Otherwise give the icon
+    <code>role="img"</code> and an <code>aria-label</code> that states the disclosure
+    clearly, e.g. “AI-generated image” or “Content modified by AI”.
+  </p>
+
+  <h3>3. Disclosure duration</h3>
+  <div class="row a11y-example a11y-banner">
+    <i class="ai-icon ai-icon--ai ai-icon--lg" role="img" aria-label="Contains AI"></i>
+    <span class="a11y-label">This content was created with the help of AI.</span>
+  </div>
+  <p class="note">
+    If the disclosure appears only for a limited time, keep it visible long enough
+    to be read and understood. Do not use short auto-dismiss timeouts.
+  </p>
+
+  <h3>4. Second interactive layer</h3>
+  <details class="a11y-details">
+    <summary>
+      <i class="ai-icon ai-icon--ai-generated ai-icon--lg" aria-hidden="true"></i>
+      <span>AI-generated content</span>
+    </summary>
+    <div class="a11y-details-body">
+      <p>
+        This image was generated by an AI system. It may contain inaccuracies
+        or depict people, places, or events that did not happen.
+      </p>
+    </div>
+  </details>
+<pre>&lt;<span class="tag">details</span> <span class="attr">class</span>=<span class="str">"a11y-details"</span>&gt;
+  &lt;<span class="tag">summary</span>&gt;
+    &lt;<span class="tag">i</span> <span class="attr">class</span>=<span class="str">"ai-icon ai-icon--ai-generated ai-icon--lg"</span>
+       <span class="attr">aria-hidden</span>=<span class="str">"true"</span>&gt;&lt;/<span class="tag">i</span>&gt;
+    &lt;<span class="tag">span</span>&gt;AI-generated content&lt;/<span class="tag">span</span>&gt;
+  &lt;/<span class="tag">summary</span>&gt;
+  &lt;<span class="tag">div</span>&gt;
+    &lt;<span class="tag">p</span>&gt;This image was generated by an AI system...&lt;/<span class="tag">p</span>&gt;
+  &lt;/<span class="tag">div</span>&gt;
+&lt;/<span class="tag">details</span>&gt;</pre>
+  <p class="note">
+    The <code>&lt;details&gt;</code> element provides a built-in second layer that is
+    keyboard-focusable and announced by assistive technologies. The icon visually
+    indicates that more information is available while the visible label clearly
+    states the disclosure.
+  </p>
+</div>
+
 <div class="sec"><h2>Usage Examples</h2>
   <h3>1. CSS helper classes (recommended)</h3>
   <div class="row">
-    <i class="ai-icon ai-icon--ai ai-icon--xl"></i>
-    <i class="ai-icon ai-icon--ai-modified ai-icon--xl"></i>
-    <i class="ai-icon ai-icon--ai-generated ai-icon--xl"></i>
+    <i class="ai-icon ai-icon--ai ai-icon--xl" role="img" aria-label="AI content"></i>
+    <i class="ai-icon ai-icon--ai-modified ai-icon--xl" role="img" aria-label="AI modified content"></i>
+    <i class="ai-icon ai-icon--ai-generated ai-icon--xl" role="img" aria-label="AI generated content"></i>
   </div>
-<pre>&lt;<span class="tag">i</span> <span class="attr">class</span>=<span class="str">"ai-icon ai-icon--ai ai-icon--xl"</span> <span class="attr">style</span>=<span class="str">"color:#0066cc"</span>&gt;&lt;/<span class="tag">i</span>&gt;</pre>
+<pre>&lt;<span class="tag">i</span> <span class="attr">class</span>=<span class="str">"ai-icon ai-icon--ai ai-icon--xl"</span>
+   <span class="attr">style</span>=<span class="str">"color:#0066cc"</span>
+   <span class="attr">role</span>=<span class="str">"img"</span> <span class="attr">aria-label</span>=<span class="str">"AI content"</span>&gt;&lt;/<span class="tag">i</span>&gt;</pre>
 
   <h3>2. HTML character entities</h3>
   <div class="row">
-    <span class="ai-icon" style="font-size:48px">&#xE001;</span>
-    <span class="ai-icon" style="font-size:48px">&#xE002;</span>
-    <span class="ai-icon" style="font-size:48px">&#xE003;</span>
+    <span class="ai-icon" role="img" aria-label="AI content" style="font-size:48px">&#xE001;</span>
+    <span class="ai-icon" role="img" aria-label="AI modified content" style="font-size:48px">&#xE002;</span>
+    <span class="ai-icon" role="img" aria-label="AI generated content" style="font-size:48px">&#xE003;</span>
   </div>
-<pre>&lt;<span class="tag">span</span> <span class="attr">class</span>=<span class="str">"ai-icon"</span> <span class="attr">style</span>=<span class="str">"font-size:48px; color:#0066cc"</span>&gt;&amp;#xE001;&lt;/<span class="tag">span</span>&gt;</pre>
+<pre>&lt;<span class="tag">span</span> <span class="attr">class</span>=<span class="str">"ai-icon"</span>
+      <span class="attr">role</span>=<span class="str">"img"</span> <span class="attr">aria-label</span>=<span class="str">"AI content"</span>
+      <span class="attr">style</span>=<span class="str">"font-size:48px; color:#0066cc"</span>&gt;&amp;#xE001;&lt;/<span class="tag">span</span>&gt;</pre>
 
   <h3>3. Ligatures</h3>
   <p>Any text node with the font family can trigger the ligature:</p>
   <div class="row" style="font-family:'eu-ai-label-iconfont'; font-size:48px; gap:40px">
-    <span>ai</span>
-    <span>aim</span>
-    <span>aig</span>
+    <span role="img" aria-label="AI content">ai</span>
+    <span role="img" aria-label="AI modified content">aim</span>
+    <span role="img" aria-label="AI generated content">aig</span>
   </div>
   <div class="row" style="font-family:'eu-ai-label-iconfont'; font-size:32px; gap:40px">
-    <span>AI</span>
-    <span>AIM</span>
-    <span>AIG</span>
-    <span>AiM</span>
+    <span role="img" aria-label="AI content">AI</span>
+    <span role="img" aria-label="AI modified content">AIM</span>
+    <span role="img" aria-label="AI generated content">AIG</span>
+    <span role="img" aria-label="AI modified content">AiM</span>
   </div>
 <pre><span class="comment">&lt;!-- .ai-icon sets text-rendering: optimizeLegibility, which enables standard ligatures --&gt;</span>
 
-&lt;<span class="tag">span</span> <span class="attr">style</span>=<span class="str">"font-family:'eu-ai-label-iconfont'; font-size:48px"</span>&gt;ai aim aig&lt;/<span class="tag">span</span>&gt;</pre>
+&lt;<span class="tag">span</span> <span class="attr">class</span>=<span class="str">"ai-icon"</span> <span class="attr">role</span>=<span class="str">"img"</span>
+      <span class="attr">aria-label</span>=<span class="str">"AI generated content"</span>
+      <span class="attr">style</span>=<span class="str">"font-size:48px"</span>&gt;aig&lt;/<span class="tag">span</span>&gt;</pre>
 
   <h3>4. CSS content value</h3>
 <pre><span class="tag">.my-icon::before</span> {
   <span class="attr">font-family</span>: <span class="str">'eu-ai-label-iconfont'</span>;
   <span class="attr">content</span>: <span class="str">"\e001"</span>;
-}</pre>
+}
+
+&lt;<span class="tag">span</span> <span class="attr">class</span>=<span class="str">"my-icon"</span> <span class="attr">role</span>=<span class="str">"img"</span>
+      <span class="attr">aria-label</span>=<span class="str">"AI content"</span>&gt;&lt;/<span class="tag">span</span>&gt;</pre>
 </div>
 
 <div class="sec"><h2>Colors</h2>
   <div class="row" style="font-size:4rem">
-    <i class="ai-icon ai-icon--ai" style="color:black"></i>
-    <i class="ai-icon ai-icon--ai" style="color:#0066cc"></i>
-    <i class="ai-icon ai-icon--ai" style="color:#cc0000"></i>
-    <i class="ai-icon ai-icon--ai" style="color:#27ae60"></i>
-    <i class="ai-icon ai-icon--ai" style="color:#e67e22"></i>
-    <i class="ai-icon ai-icon--ai" style="color:#8e44ad"></i>
+    <i class="ai-icon ai-icon--ai" style="color:black" role="img" aria-label="AI content"></i>
+    <i class="ai-icon ai-icon--ai" style="color:#0066cc" role="img" aria-label="AI content"></i>
+    <i class="ai-icon ai-icon--ai" style="color:#cc0000" role="img" aria-label="AI content"></i>
+    <i class="ai-icon ai-icon--ai" style="color:#27ae60" role="img" aria-label="AI content"></i>
+    <i class="ai-icon ai-icon--ai" style="color:#e67e22" role="img" aria-label="AI content"></i>
+    <i class="ai-icon ai-icon--ai" style="color:#8e44ad" role="img" aria-label="AI content"></i>
   </div>
 </div>
 
 <div class="sec"><h2>Sizes</h2>
   <div class="row" style="align-items:flex-end; gap:24px">
-    <span class="ai-icon ai-icon--ai ai-icon--sm"></span>
-    <span class="ai-icon ai-icon--ai ai-icon--md"></span>
-    <span class="ai-icon ai-icon--ai ai-icon--lg"></span>
-    <span class="ai-icon ai-icon--ai ai-icon--xl"></span>
-    <span class="ai-icon ai-icon--ai ai-icon--2xl"></span>
-    <span class="ai-icon ai-icon--ai ai-icon--3xl"></span>
+    <span class="ai-icon ai-icon--ai ai-icon--sm" role="img" aria-label="AI content"></span>
+    <span class="ai-icon ai-icon--ai ai-icon--md" role="img" aria-label="AI content"></span>
+    <span class="ai-icon ai-icon--ai ai-icon--lg" role="img" aria-label="AI content"></span>
+    <span class="ai-icon ai-icon--ai ai-icon--xl" role="img" aria-label="AI content"></span>
+    <span class="ai-icon ai-icon--ai ai-icon--2xl" role="img" aria-label="AI content"></span>
+    <span class="ai-icon ai-icon--ai ai-icon--3xl" role="img" aria-label="AI content"></span>
   </div>
 </div>
 
@@ -182,7 +321,7 @@ fc-cache -fv</pre>
 <table>
   <tr><th>Icon</th><th>Unicode</th><th>HTML</th><th>CSS content</th><th>Class</th><th>Ligature</th></tr>
   <tr>
-    <td><span class="ai-icon" style="font-size:3rem">&#xE001;</span></td>
+    <td><span class="ai-icon" role="img" aria-label="AI content" style="font-size:3rem">&#xE001;</span></td>
     <td>U+E001</td>
     <td><code>&amp;#xE001;</code></td>
     <td><code>"\e001"</code></td>
@@ -190,7 +329,7 @@ fc-cache -fv</pre>
     <td><code>ai</code></td>
   </tr>
   <tr>
-    <td><span class="ai-icon" style="font-size:3rem">&#xE002;</span></td>
+    <td><span class="ai-icon" role="img" aria-label="AI modified content" style="font-size:3rem">&#xE002;</span></td>
     <td>U+E002</td>
     <td><code>&amp;#xE002;</code></td>
     <td><code>"\e002"</code></td>
@@ -198,7 +337,7 @@ fc-cache -fv</pre>
     <td><code>aim</code></td>
   </tr>
   <tr>
-    <td><span class="ai-icon" style="font-size:3rem">&#xE003;</span></td>
+    <td><span class="ai-icon" role="img" aria-label="AI generated content" style="font-size:3rem">&#xE003;</span></td>
     <td>U+E003</td>
     <td><code>&amp;#xE003;</code></td>
     <td><code>"\e003"</code></td>
@@ -219,7 +358,7 @@ cmap = font.getBestCmap()
 </div>
 
 <div class="sec"><h2>License & Attribution</h2>
-  <p><strong>Icons:</strong> Designed by the <a href="https://artificialintelligenceact.europa.eu/">European Union</a> for the EU Artificial Intelligence Act and released under the <a href="https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12">EUPL</a>.</p>
+  <p><strong>Icons:</strong> Designed by the <a href="https://digital-strategy.ec.europa.eu/en/policies/eu-icons-labelling-ai-generated-content" target="_blank">European Union</a> for the EU Artificial Intelligence Act and released under the <a href="https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12">EUPL</a>.</p>
   <p class="note">The icon designs remain the property of the European Union. Font files and code are generated from the public SVG sources and may be used freely.</p>
   <p class="note">TTF/OTF fonts do not support transparency — use the SVG sources directly if you need transparent backgrounds.</p>
 </div>
