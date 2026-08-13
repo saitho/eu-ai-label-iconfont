@@ -2,4 +2,3 @@ fonttools
 svg.path
 skia-pathops
 brotli
-pathops
