@@ -1,0 +1,19 @@
+build-font.py
+  s_e0c438a6ed39f8::t_28535c34c5136f 129-137,156,158
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "c8ba7733a613778efb73b4548c31bf446c7d18fc",
+  "prompts": {},
+  "sessions": {
+    "s_e0c438a6ed39f8": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_006dddb00ffe32wvYJ6lqd33DI",
+        "model": "kimi-k2.7-code"
+      },
+      "human_author": "Mario Lubenka <me@saitho.me>"
+    }
+  }
+}
