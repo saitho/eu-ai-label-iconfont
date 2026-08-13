@@ -25,7 +25,7 @@ jobs:
           cache: "pip"
 
       - name: Install dependencies
-        run: pip install fonttools cu2qu
+        run: pip install -r requirements.txt
 
       - name: Build font
         run: python3 build-font.py
@@ -37,8 +37,8 @@ jobs:
           path: |
             dist/ai-labels-font.ttf
             dist/ai-labels-font.css
-            dist/ai-labels-font.html
             dist/ai-labels-font.woff2
+            dist/index.html
           retention-days: 7
 
   publish:
@@ -88,7 +88,7 @@ jobs:
           cache: "pip"
 
       - name: Install dependencies
-        run: pip install fonttools cu2qu
+        run: pip install -r requirements.txt
 
       - name: Build font
         run: python3 build-font.py
