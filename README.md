@@ -29,10 +29,26 @@ fc-cache -fv
 
 ### Web
 
-Copy `fonts/` files to your web assets folder:
+#### NPM
+
+Install the package:
 
 ```bash
-cp fonts/eu-ai-label-iconfont.{ttf,html,css} your-web/assets/fonts/
+npm install eu-ai-label-iconfont
+```
+
+Import the CSS in your project:
+
+```javascript
+import 'eu-ai-label-iconfont/dist/eu-ai-label-iconfont.css';
+```
+
+#### Manual
+
+Copy `dist/` files to your web assets folder:
+
+```bash
+cp dist/eu-ai-label-iconfont.{ttf,woff2,css} your-project/assets/
 ```
 
 ## Usage
