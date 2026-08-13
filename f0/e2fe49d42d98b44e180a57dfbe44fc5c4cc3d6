@@ -1,0 +1,14 @@
+package.json
+  h_cdcdfb206c2168 27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "f0e2fe49d42d98b44e180a57dfbe44fc5c4cc3d6",
+  "prompts": {},
+  "humans": {
+    "h_cdcdfb206c2168": {
+      "author": "Mario Lubenka <me@saitho.me>"
+    }
+  }
+}
