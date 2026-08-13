@@ -1,0 +1,14 @@
+.gitignore
+  h_cdcdfb206c2168 1-2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "dbc953fd9b62daea663a7c212629e819a81aeb31",
+  "prompts": {},
+  "humans": {
+    "h_cdcdfb206c2168": {
+      "author": "Mario Lubenka <me@saitho.me>"
+    }
+  }
+}
