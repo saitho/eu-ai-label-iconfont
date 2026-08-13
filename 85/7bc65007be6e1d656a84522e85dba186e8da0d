@@ -1,0 +1,20 @@
+.github/workflows/publish.yml
+  s_434347c2187bdb::t_fe6c014efdb372 28
+  s_434347c2187bdb::t_8601c117f73316 91
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "857bc65007be6e1d656a84522e85dba186e8da0d",
+  "prompts": {},
+  "sessions": {
+    "s_434347c2187bdb": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0072850e1ffejlvoPii3jzkynL",
+        "model": "kimi-k2.7-code"
+      },
+      "human_author": "Mario Lubenka <me@saitho.me>"
+    }
+  }
+}
