@@ -9,8 +9,7 @@ on:
 permissions:
   contents: read
   pages: write
-  id-token: write
-  packages: write
+  id-token: write  # Required for OIDC
 
 jobs:
   build:
@@ -50,8 +49,9 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
           registry-url: "https://registry.npmjs.org"
+          package-manager-cache: false  # never use caching in release builds
 
       - name: Get version from tag
         id: version
@@ -67,9 +67,7 @@ jobs:
           "
 
       - name: Publish to NPM
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: "${{ secrets.NPM_TOKEN }}"
+        run: npm publish
 
   deploy:
     needs: build
