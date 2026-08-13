@@ -2,7 +2,7 @@
 
 ## Quick Reference
 
-- **Project**: `ai-labels-font` — TTF font of 3 EU AI Act label icons (AI, AI Modified, AI Generated)
+- **Project**: `eu-ai-label-iconfont` — TTF font of 3 EU AI Act label icons (AI, AI Modified, AI Generated)
 - **Dependencies**: Python 3.12+, `fonttools`, `svg.path`, `skia-pathops`, `brotli`
 - **Build**: `python3 build-font.py`
 
@@ -14,9 +14,9 @@ au-ai-iconfont/
 ├── README.md          ← user docs (installation, usage, license)
 ├── build-font.py      ← build script (SVG → TTF/WOFF2/CSS)
 ├── dist/
-│   ├── ai-labels-font.ttf        ← built TTF font
-│   ├── ai-labels-font.woff2      ← built WOFF2 font
-│   ├── ai-labels-font.css        ← CSS utility classes
+│   ├── eu-ai-label-iconfont.ttf        ← built TTF font
+│   ├── eu-ai-label-iconfont.woff2      ← built WOFF2 font
+│   ├── eu-ai-label-iconfont.css        ← CSS utility classes
 │   └── index.html                ← static demo page
 └── icons/              ← SVG source files (EU AI Act icons)
     ├── LABEL_AI_black.svg              ← source for U+E001 (type: "ai")
@@ -45,7 +45,7 @@ pip3 install -r requirements.txt
 python3 build-font.py
 ```
 
-Output: `dist/ai-labels-font.ttf`, `dist/ai-labels-font.woff2`, `dist/ai-labels-font.css`.
+Output: `dist/eu-ai-label-iconfont.ttf`, `dist/eu-ai-label-iconfont.woff2`, `dist/eu-ai-label-iconfont.css`.
 
 ### Add New Glyphs
 
@@ -82,7 +82,7 @@ Verify built font:
 ```bash
 python3 -c "
 from fontTools.ttLib import TTFont
-font = TTFont('dist/ai-labels-font.ttf')
+font = TTFont('dist/eu-ai-label-iconfont.ttf')
 cmap = font.getBestCmap()
 for code, name in sorted(cmap.items()):
     print(f'U+{code:04X} → {name}')

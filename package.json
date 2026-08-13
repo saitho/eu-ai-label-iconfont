@@ -1,5 +1,5 @@
 {
-  "name": "eu-ai-labels-font",
+  "name": "eu-ai-label-iconfont",
   "version": "0.1.0",
   "description": "TTF font of 3 EU AI Act label icons (AI, AI Modified, AI Generated)",
   "keywords": [
@@ -14,15 +14,15 @@
   "license": "EUPL-1.2",
   "repository": {
     "type": "git",
-    "url": "https://github.com/saitho/eu-ai-labels-font"
+    "url": "https://github.com/saitho/eu-ai-label-iconfont"
   },
-  "main": "dist/ai-labels-font.css",
+  "main": "dist/eu-ai-label-iconfont.css",
   "files": [
-    "dist/ai-labels-font.ttf",
-    "dist/ai-labels-font.woff2",
+    "dist/eu-ai-label-iconfont.ttf",
+    "dist/eu-ai-label-iconfont.woff2",
     "dist/index.html",
-    "dist/ai-labels-font.css",
+    "dist/eu-ai-label-iconfont.css",
     "package.json"
   ],
-  "homepage": "https://github.com/saitho/eu-ai-labels-font"
+  "homepage": "https://github.com/saitho/eu-ai-label-iconfont"
 }

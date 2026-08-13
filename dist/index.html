@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ai-labels-font — AI Content Label Icons</title>
-<link rel="stylesheet" href="ai-labels-font.css">
+<title>eu-ai-label-iconfont — AI Content Label Icons</title>
+<link rel="stylesheet" href="eu-ai-label-iconfont.css">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body {
@@ -42,7 +42,7 @@
 </style>
 </head>
 <body>
-<h1>ai-labels-font</h1>
+<h1>eu-ai-label-iconfont</h1>
 <p class="sub">
   EU AI Act content label icons as a font — public domain<br>
   Type <code>ai</code> <code>aim</code> <code>aig</code> for icons • Any color • Any size
@@ -89,21 +89,21 @@
 <div class="sec"><h2>Quick Start</h2>
   <h3>Web</h3>
   <p class="install-step">Copy the font files to your assets folder:</p>
-<pre><span class="comment"># ai-labels-font.css, ai-labels-font.ttf, ai-labels-font.woff2</span>
-cp dist/ai-labels-font.* your-project/assets/</pre>
+<pre><span class="comment"># eu-ai-label-iconfont.css, eu-ai-label-iconfont.ttf, eu-ai-label-iconfont.woff2</span>
+cp dist/eu-ai-label-iconfont.* your-project/assets/</pre>
   <p class="install-step">Include the CSS and use the helper classes:</p>
 <pre><span class="comment">&lt;!-- sizes: sm, md, lg, xl, 2xl, 3xl --&gt;</span>
-&lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="attr">href</span>=<span class="str">"ai-labels-font.css"</span>&gt;
+&lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="attr">href</span>=<span class="str">"eu-ai-label-iconfont.css"</span>&gt;
 
 &lt;<span class="tag">i</span> <span class="attr">class</span>=<span class="str">"ai-icon ai-icon--ai ai-icon--xl"</span>&gt;&lt;/<span class="tag">i</span>&gt;
 &lt;<span class="tag">i</span> <span class="attr">class</span>=<span class="str">"ai-icon ai-icon--ai-modified ai-icon--xl"</span>&gt;&lt;/<span class="tag">i</span>&gt;
 &lt;<span class="tag">i</span> <span class="attr">class</span>=<span class="str">"ai-icon ai-icon--ai-generated ai-icon--xl"</span>&gt;&lt;/<span class="tag">i</span>&gt;</pre>
 
   <h3>Desktop</h3>
-  <p class="install-step"><strong>macOS:</strong> double-click <code>ai-labels-font.ttf</code> → “Install Font”.</p>
-  <p class="install-step"><strong>Windows:</strong> right-click <code>ai-labels-font.ttf</code> → “Install”.</p>
+  <p class="install-step"><strong>macOS:</strong> double-click <code>eu-ai-label-iconfont.ttf</code> → “Install Font”.</p>
+  <p class="install-step"><strong>Windows:</strong> right-click <code>eu-ai-label-iconfont.ttf</code> → “Install”.</p>
   <p class="install-step"><strong>Linux:</strong></p>
-<pre>cp ai-labels-font.ttf ~/.local/share/fonts/
+<pre>cp eu-ai-label-iconfont.ttf ~/.local/share/fonts/
 fc-cache -fv</pre>
 </div>
 
@@ -126,12 +126,12 @@ fc-cache -fv</pre>
 
   <h3>3. Ligatures</h3>
   <p>Any text node with the font family can trigger the ligature:</p>
-  <div class="row" style="font-family:'ai-labels-font'; font-size:48px; gap:40px">
+  <div class="row" style="font-family:'eu-ai-label-iconfont'; font-size:48px; gap:40px">
     <span>ai</span>
     <span>aim</span>
     <span>aig</span>
   </div>
-  <div class="row" style="font-family:'ai-labels-font'; font-size:32px; gap:40px">
+  <div class="row" style="font-family:'eu-ai-label-iconfont'; font-size:32px; gap:40px">
     <span>AI</span>
     <span>AIM</span>
     <span>AIG</span>
@@ -139,11 +139,11 @@ fc-cache -fv</pre>
   </div>
 <pre><span class="comment">&lt;!-- .ai-icon sets text-rendering: optimizeLegibility, which enables standard ligatures --&gt;</span>
 
-&lt;<span class="tag">span</span> <span class="attr">style</span>=<span class="str">"font-family:'ai-labels-font'; font-size:48px"</span>&gt;ai aim aig&lt;/<span class="tag">span</span>&gt;</pre>
+&lt;<span class="tag">span</span> <span class="attr">style</span>=<span class="str">"font-family:'eu-ai-label-iconfont'; font-size:48px"</span>&gt;ai aim aig&lt;/<span class="tag">span</span>&gt;</pre>
 
   <h3>4. CSS content value</h3>
 <pre><span class="tag">.my-icon::before</span> {
-  <span class="attr">font-family</span>: <span class="str">'ai-labels-font'</span>;
+  <span class="attr">font-family</span>: <span class="str">'eu-ai-label-iconfont'</span>;
   <span class="attr">content</span>: <span class="str">"\e001"</span>;
 }</pre>
 </div>
@@ -204,7 +204,7 @@ fc-cache -fv</pre>
   <p>Inspect the built font with <code>fontTools</code>:</p>
 <pre><span class="tag">from</span> fontTools.ttLib <span class="tag">import</span> TTFont
 
-font = TTFont(<span class="str">'ai-labels-font.ttf'</span>)
+font = TTFont(<span class="str">'eu-ai-label-iconfont.ttf'</span>)
 cmap = font.getBestCmap()
 <span class="tag">for</span> code, name <span class="tag">in</span> sorted(cmap.items()):
     <span class="tag">print</span>(f<span class="str">'U+{code:04X} → {name}'</span>)</pre>

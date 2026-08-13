@@ -1,4 +1,4 @@
-# ai-labels-font
+# eu-ai-label-iconfont
 
 
 <img src="icons/LABEL_AI GENERATED_black.svg" width="200"/>
@@ -14,16 +14,16 @@ AI Content Label Icons for desktop and web.
 ### Desktop (macOS, Windows, Linux)
 
 **macOS:**
-1. Double-click `fonts/ai-labels-font.ttf`
+1. Double-click `fonts/eu-ai-label-iconfont.ttf`
 2. Click "Install Font" in Font Book
 
 **Windows:**
-1. Right-click `fonts/ai-labels-font.ttf`
+1. Right-click `fonts/eu-ai-label-iconfont.ttf`
 2. Select "Install"
 
 **Linux:**
 ```bash
-cp fonts/ai-labels-font.ttf ~/.local/share/fonts/
+cp fonts/eu-ai-label-iconfont.ttf ~/.local/share/fonts/
 fc-cache -fv
 ```
 
@@ -32,7 +32,7 @@ fc-cache -fv
 Copy `fonts/` files to your web assets folder:
 
 ```bash
-cp fonts/ai-labels-font.{ttf,html,css} your-web/assets/fonts/
+cp fonts/eu-ai-label-iconfont.{ttf,html,css} your-web/assets/fonts/
 ```
 
 ## Usage
@@ -64,12 +64,12 @@ The mapping is **case-insensitive**: `AIM`, `AiM`, `AIG` all work.
 
 ```css
 @font-face {
-  font-family: 'ai-labels-font';
-  src: url('ai-labels-font.ttf') format('truetype');
+  font-family: 'eu-ai-label-iconfont';
+  src: url('eu-ai-label-iconfont.ttf') format('truetype');
 }
 
 .ai-icon {
-  font-family: 'ai-labels-font';
+  font-family: 'eu-ai-label-iconfont';
   display: inline-block;
 }
 
@@ -90,7 +90,7 @@ The mapping is **case-insensitive**: `AIM`, `AiM`, `AIG` all work.
 ```python
 from fontTools.ttLib import TTFont
 
-font = TTFont('ai-labels-font.ttf')
+font = TTFont('eu-ai-label-iconfont.ttf')
 cmap = font.getBestCmap()
 # {0xE001: 'ai.general', 0xE002: 'ai.modified', 0xE003: 'ai.generated'}
 ```
@@ -118,11 +118,11 @@ The icons render in whatever color you set:
 ## Files
 
 ```
-ai-labels-font/
+eu-ai-label-iconfont/
 ├── fonts/
-│   ├── ai-labels-font.ttf          # Truetype font (desktop)
-│   ├── ai-labels-font.html          # Interactive demo
-│   ├── ai-labels-font.css           # CSS utility classes
+│   ├── eu-ai-label-iconfont.ttf          # Truetype font (desktop)
+│   ├── eu-ai-label-iconfont.html          # Interactive demo
+│   ├── eu-ai-label-iconfont.css           # CSS utility classes
 │   └── build-font.py               # Build script (Python 3.12+)
 └── icons/                           # SVG source files (EU AI Act icons)
     ├── LABEL_AI_black.svg
@@ -148,7 +148,7 @@ python3 build-font.py
 
 ## Demo
 
-Open `fonts/ai-labels-font.html` in a browser for an interactive demo showing all icons at various sizes and colors.
+Open `fonts/eu-ai-label-iconfont.html` in a browser for an interactive demo showing all icons at various sizes and colors.
 
 ## Transparency in Fonts
 

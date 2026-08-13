@@ -35,9 +35,9 @@ jobs:
         with:
           name: font-files
           path: |
-            dist/ai-labels-font.ttf
-            dist/ai-labels-font.css
-            dist/ai-labels-font.woff2
+            dist/eu-ai-label-iconfont.ttf
+            dist/eu-ai-label-iconfont.css
+            dist/eu-ai-label-iconfont.woff2
             dist/index.html
           retention-days: 7
 

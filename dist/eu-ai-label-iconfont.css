@@ -1,17 +1,17 @@
-/* ai-labels-font — AI Content Label Icons */
+/* eu-ai-label-iconfont — AI Content Label Icons */
 /* Icons designed by the European Union in the public domain */
 
 @font-face {
-  font-family: 'ai-labels-font';
-  src: url('ai-labels-font.eot');
-  src: url('ai-labels-font.eot?#iefix') format('embedded-opentype'),
-       url('ai-labels-font.woff2') format('woff2'),
-       url('ai-labels-font.ttf') format('truetype');
+  font-family: 'eu-ai-label-iconfont';
+  src: url('eu-ai-label-iconfont.eot');
+  src: url('eu-ai-label-iconfont.eot?#iefix') format('embedded-opentype'),
+       url('eu-ai-label-iconfont.woff2') format('woff2'),
+       url('eu-ai-label-iconfont.ttf') format('truetype');
   font-weight: normal; font-style: normal; font-display: swap;
 }
 
 .ai-icon {
-  font-family: 'ai-labels-font';
+  font-family: 'eu-ai-label-iconfont';
   font-style: normal; font-weight: normal;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

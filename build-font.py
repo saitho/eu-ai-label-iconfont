@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Build ai-labels-font from EU AI label SVG icons.
+Build eu-ai-label-iconfont from EU AI label SVG icons.
 
 Glyphs (PUA):
   U+E001 → ai.general        (TYPE: ai / AI / Ai)
@@ -32,7 +32,7 @@ PROJECT_ROOT = SCRIPT_DIR
 ICON_DIR = os.path.join(PROJECT_ROOT, "icons")
 OUTPUT_DIR = os.path.join(PROJECT_ROOT, "dist")
 
-FONT_FAMILY = "ai-labels-font"
+FONT_FAMILY = "eu-ai-label-iconfont"
 FONT_FULL_NAME = FONT_FAMILY
 FONT_PS_NAME = FONT_FAMILY
 
@@ -187,7 +187,7 @@ def build_liga_fea():
 def build_font():
     """Build and save the TTF font."""
     print("=" * 60)
-    print("Building ai-labels-font")
+    print("Building eu-ai-label-iconfont")
     print("=" * 60)
 
     glyph_order = (
