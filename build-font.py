@@ -140,10 +140,19 @@ def draw_glyph_from_svg(svg_path, target=1000):
         elif method == "endPath":
             scaled.endPath()
 
-    # Convert cubics to quadratics and build the TTGlyph
+    # Center the glyph vertically in the em square.
+    from fontTools.pens.boundsPen import BoundsPen
+    from fontTools.pens.transformPen import TransformPen
+    bounds_pen = BoundsPen(None)
+    scaled.replay(bounds_pen)
+    x1, y1, x2, y2 = bounds_pen.bounds
+    y_offset = (target / 2) - (y1 + y2) / 2
+
+    # Convert cubics to quadratics, translate, and build the TTGlyph
     tt_pen = TTGlyphPen(None)
     qu_pen = Cu2QuPen(tt_pen, max_err=1.0)
-    scaled.replay(qu_pen)
+    transform_pen = TransformPen(qu_pen, (1, 0, 0, 1, 0, y_offset))
+    scaled.replay(transform_pen)
     return tt_pen.glyph()
 
 
@@ -231,20 +240,20 @@ def build_font():
         "styleName": "Regular",
     })
 
-    # Setup OS/2 table
+    # Setup OS/2 table with a vertically centered em square (baseline at 0)
     fb.setupOS2(
-        sTypoAscender=800, sTypoDescender=-200, sTypoLineGap=0,
-        sCapHeight=800, usWinAscent=1000, usWinDescent=200
+        sTypoAscender=1000, sTypoDescender=0, sTypoLineGap=0,
+        sCapHeight=1000, usWinAscent=1000, usWinDescent=0
     )
 
-    # Setup head and hhea tables required by OTS / browsers
+    # Setup head and hhea tables
     fb.setupHead(
         unitsPerEm=1000,
         xMin=int(x_min), yMin=int(y_min),
         xMax=int(x_max), yMax=int(y_max),
     )
     fb.setupHorizontalHeader(
-        ascent=800, descent=-200, lineGap=0,
+        ascent=1000, descent=0, lineGap=0,
         advanceWidthMax=advance_max,
         minLeftSideBearing=0,
         minRightSideBearing=0,
@@ -302,6 +311,7 @@ def make_css():
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: inline-block;
+  vertical-align: middle;
   color: #000000;
 }
 
